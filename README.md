@@ -1,3 +1,23 @@
+<h2>Overview</h2>
+
+<a href="https://pracharya2601.github.io/react-search/">Checkout the deployed app</a>
+
+<p>
+This is a simple Image searching app created with React, semantic UI, axios and Unsplash API. User can able to search any image using keyword. All the image will render into the container once search is done.
+</p>
+
+<h2>Screenshot</h2>
+
+<div align="center">
+    <img src="public/images/a.png" width="500px"> 
+</div>
+
+<div align="center">
+    <img src="public/images/b.png" width="500px"> 
+</div>
+
+<hr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
