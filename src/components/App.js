@@ -3,6 +3,7 @@ import axios from 'axios';
 import unsplash from '../api/unsplash';
 import SearchBar from './SearchBar';
 import ImageList from './ImageList';
+import DictDataList from './DictDataList';
 
 
 class App extends React.Component{
@@ -23,7 +24,6 @@ class App extends React.Component{
         params: {key: "b4a49481-5cde-45ef-b572-6b39bde9b856"}
 
       });
-      console.log(results.data)
       this.setState({data: results.data})
     }
     
@@ -31,6 +31,8 @@ class App extends React.Component{
     return (
       <div className="ui container" style={{marginTop: '2vh'}}>
         <SearchBar onSubmit={this.onSearchSubmit} search={this.forDictSearch} />
+        <DictDataList meanings={this.state.data} />
+        <br />
         <ImageList images={this.state.images}/>
       </div>
     );
@@ -39,14 +41,3 @@ class App extends React.Component{
 
 export default App;
 
-/*
-    const results = await axios.get(`https://www.dictionaryapi.com/api/v3/references/sd4/json/`, {
-      params: {query: term},
-      header: {
-        key: "b4a49481-5cde-45ef-b572-6b39bde9b856"
-      }
-      https://www.dictionaryapi.com/api/v3/references/sd4/json/?query=story
-    });
-    console.log(results);
-    }
-*/
