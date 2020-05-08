@@ -5,7 +5,7 @@ const DictDataList = props => {
     const meanings = props.meanings.map((meaning) => {
         if(typeof(meaning) == "string") {
             return(
-                <p key={meaning} className ="ui label"><h3></h3>{meaning}</p>
+                <p key={meaning} className="ui label" style={{margin: '1vh'}}>{meaning}</p>
             )
         } else {
             return (

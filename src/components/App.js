@@ -18,6 +18,10 @@ class App extends React.Component{
     selectedVideo: null
   };
 
+  componentDidMount() {
+    this.onTermSubmit('trending united states');
+  }
+
     onSearchSubmit = async (term) => {
     const response = await unsplash.get('/search/photos', {
         params: { query: term},
