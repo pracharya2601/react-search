@@ -39,9 +39,9 @@ class App extends React.Component{
           }
       });
       this.setState({videos: response.data.items});
-      };
-      onVideoSelect = (video) => {
-        this.setState({selectedVideo: video})
+    };
+    onVideoSelect = (video) => {
+      this.setState({selectedVideo: video})
     }
 
     forDictSearch = async (term) => {
