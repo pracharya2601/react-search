@@ -1,0 +1,2 @@
+.video-item{display:flex!important;align-items:center!important;cursor:pointer}.video-item.item img{max-width:180px;height:auto}.image-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));grid-gap:0 10px;grid-auto-rows:auto;max-height:60vh;overflow:hidden;margin-top:2vh}.image-list img{width:250px}
+/*# sourceMappingURL=main.e7185c43.chunk.css.map */
