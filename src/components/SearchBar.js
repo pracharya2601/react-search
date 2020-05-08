@@ -11,11 +11,12 @@ class SearchBar extends React.Component {
         event.preventDefault();
         this.props.onSubmit(this.state.term)
         this.props.search(this.state.term)
+        this.props.onVideoSubmit(this.state.term)
     }
 
     render() {
         return(
-            <div className="ui segment">
+            <div className="search-bar ui segment">
                 <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
                         <label>Search something</label>
