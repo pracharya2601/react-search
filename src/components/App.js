@@ -15,7 +15,8 @@ class App extends React.Component{
     images: [], //its an array of an images
     data: [], //dictionary results array
     videos: [],
-    selectedVideo: null
+    selectedVideo: null,
+    selectedWord: ''
   };
 
   componentDidMount() {
@@ -52,15 +53,19 @@ class App extends React.Component{
       this.setState({data: results.data})
     }
 
+
     onSelectWord = (word) => {
-      console.log('from the app!', word);
+      this.forDictSearch(word);
+      this.onTermSubmit(word);
+      this.onSearchSubmit(word);
     }
 
+    
 
   render() {
     return (
       <div className="ui container" style={{marginTop: '2vh'}}>
-        <SearchBar onSubmit={this.onSearchSubmit} search={this.forDictSearch} onVideoSubmit={this.onTermSubmit} onSelectWord={this.onSelectWord} />
+        <SearchBar onSubmit={this.onSearchSubmit} search={this.forDictSearch} onVideoSubmit={this.onTermSubmit} onSelectWord={this.state.selectedWord} />
         <DictDataList meanings={this.state.data} onSelectWord={this.onSelectWord}/>
         <ImageList images={this.state.images}/>
         <br />
