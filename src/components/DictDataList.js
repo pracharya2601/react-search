@@ -1,26 +1,24 @@
 import React from 'react';
+import DictWithMeaning from './DictWithMeaning';
+import DictWithoutMeaning from './DictWithoutMeaning';
 
-const DictDataList = props => {
-
-    const meanings = props.meanings.map((meaning) => {
+const DictDataList = ({meanings, onSelectWord}) => {
+    const meaningRes = meanings.map(meaning => {
         if(typeof(meaning) == "string") {
             return(
-                <p key={meaning} className="ui label" style={{margin: '1vh'}}>{meaning}</p>
+                <DictWithoutMeaning onSelectWord={onSelectWord} key={meaning} meanin={meaning}/>
             )
         } else {
             return (
-                <div className="ui divided selection list" key={meaning.meta.id}>
-                    <div className="item">
-                        <div className="ui horizontal label">{meaning.meta.id}</div>
-                        <div className="ui red horizontal label">{meaning.fl}</div>{meaning.shortdef}
-                    </div>
-                </div>
+                <DictWithMeaning onSelectWord={onSelectWord}  key={meaning.meta.id} meanin={meaning}/>
             )
         }
     });
 
     return (
-        <div>{meanings}</div>
+        <div className="ui divided selection list">
+            {meaningRes}
+        </div>
     )
 }
 export default DictDataList;

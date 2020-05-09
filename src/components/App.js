@@ -22,12 +22,12 @@ class App extends React.Component{
     this.onTermSubmit('trending united states');
   }
 
-    onSearchSubmit = async (term) => {
+  onSearchSubmit = async (term) => {
     const response = await unsplash.get('/search/photos', {
         params: { query: term},
-      })
+    })
       this.setState({images: response.data.results})
-    }
+  }
 
     onTermSubmit = async (term) => {
       const  response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
@@ -52,12 +52,16 @@ class App extends React.Component{
       this.setState({data: results.data})
     }
 
+    onSelectWord = (word) => {
+      console.log('from the app!', word);
+    }
+
 
   render() {
     return (
       <div className="ui container" style={{marginTop: '2vh'}}>
-        <SearchBar onSubmit={this.onSearchSubmit} search={this.forDictSearch} onVideoSubmit={this.onTermSubmit} />
-        <DictDataList meanings={this.state.data} />
+        <SearchBar onSubmit={this.onSearchSubmit} search={this.forDictSearch} onVideoSubmit={this.onTermSubmit} onSelectWord={this.onSelectWord} />
+        <DictDataList meanings={this.state.data} onSelectWord={this.onSelectWord}/>
         <ImageList images={this.state.images}/>
         <br />
         <VideoDetail video={this.state.selectedVideo}/>

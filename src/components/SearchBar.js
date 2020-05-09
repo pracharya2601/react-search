@@ -12,7 +12,9 @@ class SearchBar extends React.Component {
         this.props.onSubmit(this.state.term)
         this.props.search(this.state.term)
         this.props.onVideoSubmit(this.state.term)
+        this.props.onSelectWord((word) => this.setState({term: word}));
     }
+
 
     render() {
         return(
